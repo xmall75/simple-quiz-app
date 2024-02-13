@@ -1,17 +1,11 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Container from "../Elements/MainApp/Container"
 
-const Main = () => {
-
-    useEffect(async () => {
-        const res = await fetch('https://opentdb.com/api.php?amount=5&category=31&difficulty=hard&type=multiple')
-        .then((res) => res.json()
-        .then((data) => console.log(data.results)))
-    })
+const Main = ({data}) => {
 
     return (
-        <main className="w-full bg-slate flex flex-col items-center">
-            <Container />
+        <main className="w-full md:w-3/5 bg-slate-900 flex flex-col items-center text-white">
+            {data && <Container data={data} />}
         </main>
     )
 }
