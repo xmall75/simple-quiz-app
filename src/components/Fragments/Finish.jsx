@@ -8,6 +8,7 @@ const Finish = () => {
     const correctAnswers = JSON.parse(localStorage.getItem('correctAnswers'))
 
     localStorage.removeItem('token')
+    localStorage.removeItem('timeout')
 
     const initialMark = 100/correctAnswers.length
 
