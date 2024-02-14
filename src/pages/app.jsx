@@ -4,18 +4,18 @@ import Main from '../components/Fragments/Main'
 import { useEffect, useState } from 'react'
 
 const App = () => {
-
-    const navigate = useNavigate()
     const token = localStorage.getItem('token')
-
 
     if(token) {
         bcrypt.compare('user', token)
         .then((res) => {
             if(!res) {
-                navigate('/')
+                window.location.href = '/'
             }
         })
+    }
+    else {
+        window.location.href = '/'
     }
 
     const [question, setQuestion] = useState(new Array)

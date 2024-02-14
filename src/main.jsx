@@ -4,6 +4,7 @@ import './index.css'
 import HomePage from './pages/home'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './pages/app'
+import FinishPage from './pages/finish'
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: '/main',
     element: <App />
+  },
+  {
+    path: '/finish',
+    element: <FinishPage />
   }
 ])
 
